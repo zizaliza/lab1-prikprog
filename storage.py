@@ -1,7 +1,7 @@
 from serializer import Serializer
 
 class Storage:
-    def __init__(self, serializer):
+    def __init__(self, serializer: Serializer):
         self.__serializer = serializer
 
     def save_to_file(self, data: dict, file_path: str) -> None:
