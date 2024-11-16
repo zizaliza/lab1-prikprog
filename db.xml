@@ -5,5 +5,9 @@
           <duration>45</duration>
           <year>4444</year>
      </Comedy>
+     <Melodrama>
+          <name>Lubov i golybi</name>
+          <duration>140</duration>
+          <year>1990</year>
+     </Melodrama>
 </Movies>
-

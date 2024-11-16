@@ -31,4 +31,3 @@ class Storage:
 
         print(f"Данные успешно загружены из файла: {self.__file_path}")
         return movies
-s

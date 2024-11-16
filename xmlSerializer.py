@@ -20,15 +20,23 @@ class XmlSerializer(Serializer):
         pretty_xml = dom.toprettyxml(indent = "     ") 
         return pretty_xml 
  
-    def from_format(self, data: dict) -> list: 
-        root = fromstring(data) 
-        movies = [] 
-        for movie_element in root: 
-            movie_type = movie_element.tag 
-            name = movie_element.find('name').text 
-            duration = int(movie_element.find('duration').text) 
-            movies.append([movie_type, name, duration]) 
-        return movies 
+    def from_format(self, data: dict) -> list:
+        root = fromstring(data)
+        movies = []
+        for movie_element in root:
+            movie_type = movie_element.tag
+            name = movie_element.find('name').text
+            duration = int(movie_element.find('duration').text)
+            year = int(movie_element.find("year").text)
+
+            movie_data = {
+                "type": movie_type,
+                "name": name,
+                "duration": duration,
+                "year": year
+            }
+            movies.append(movie_data)
+        return movies
  
     def get_format(self) -> str: 
         return 'xml'
