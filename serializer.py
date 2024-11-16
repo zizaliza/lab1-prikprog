@@ -2,12 +2,16 @@ from abc import ABC, abstractmethod
 
 class Serializer(ABC):
     @abstractmethod
-    def to_format(self, movie: dict):
+    def to_format(self, movie: dict) -> str:
         pass
     
     @abstractmethod
-    def from_format(self, data: dict):
+    def from_format(self, data: dict) -> list:
         pass
     
+    @abstractmethod
+    def get_format(self) -> str:
+        pass
+
 
 

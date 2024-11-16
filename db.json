@@ -1,7 +1,20 @@
 [
     {
+        "type": "Drama",
+        "name": "er",
+        "duration": 4,
+        "year": 4
+    },
+    {
         "type": "Comedy",
-        "name": "Comedy1",
-        "duration": 140
+        "name": "rty",
+        "duration": 4444,
+        "year": 444
+    },
+    {
+        "type": "Anime",
+        "name": "Ataka titanov",
+        "duration": 3496,
+        "year": 2013
     }
 ]

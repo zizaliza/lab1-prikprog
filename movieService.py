@@ -6,39 +6,39 @@ class MovieService():
         self.__storage = storage
         self.__movies = []
 
-    def create_movie(self, movie_type: str, name: str, duration: int, year: int):
+    def create_movie(self, movie_type: str, name: str, duration: int, year: int) -> None:
         if movie_type not in MOVIE_FACTORY_MAP:
             raise TypeError
         movie = MOVIE_FACTORY_MAP[movie_type](name, duration, year)
         self.__movies.append(movie)
-        self.__storage.save_to_file(self.__movies,"./db.xml" )
+        self.__storage.save_to_file(self.__movies)
+        print("Фильм успешно добавлен.")
 
-    def update_movie(self, movie_type: str, name: str, duration: int, year: int):
-        self.movies = self.__storage.load_from_file("./db.xml")
+    def update_movie(self, name: str, duration: int, year: int) -> None:
+        self.__movies = self.__storage.load_from_file()
         for movie in self.__movies:
-            if movie.name == name and movie.__class.name.lower() == movie_type.lower():
+            if movie.name == name:
                 movie.duration = duration
                 movie.year = year
-                self.storage.save_to_file(self.__movies, "./db.xml")
+                self.__storage.save_to_file(self.__movies)
                 print("Фильм успешно обновлен.")
                 return
         print("Фильм не найден.")
 
-    def delete_movie(self, movie_type: str, name: str):
-        self.__movies = self.__storage.load_from_file("./db.xml")
+    def delete_movie(self, name: str) -> None:
+        self.__movies = self.__storage.load_from_file()
         for movie in self.__movies:
-            if movie.name == name and movie.__class.name.lower() == movie_type.lower():
-                self.movies.remove(movie)
-                self.__storage.save_to_file(self.__movies, "./db.xml")
+            if movie.name == name:
+                self.__movies.remove(movie)
+                self.__storage.save_to_file(self.__movies)
                 print("Фильм успешно удален.")
                 return
         print("Фильм не найден.")
 
-    def read_movies(self):
-        self.__movies = self.__storage.load_from_file("./db.xml")
+    def read_movies(self) -> None:
+        self.__movies = self.__storage.load_from_file()
         if not self.__movies:
             print("База фильмов пуста.")
             return
         for movie in self.__movies:
-            print(f"Название: {movie.name}, Длительность: {movie.duration}, Год: {movie.year}, Тип: {movie.__class.name}")
-
+            print(f"Название: { movie.name }, Длительность: { movie.duration }, Год: { movie.year }, Тип: { movie.__class__.__name__ }")

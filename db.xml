@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
 <Movies>
-     <Drama>
-          <name>Rim</name>
-          <duration>290</duration>
-          <year>1900</year>
-     </Drama>
+     <Comedy>
+          <name>yuyu</name>
+          <duration>45</duration>
+          <year>4444</year>
+     </Comedy>
 </Movies>
+
