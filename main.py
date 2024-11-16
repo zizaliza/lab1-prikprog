@@ -67,8 +67,8 @@ def main():
     
     except KeyboardInterrupt:
         print("\nПрограмма была прервана пользователем.")
-    except Exception as e:
-        print(f"Произошла ошибка при запуске программы: {e}")
+    # except Exception as e:
+        # print(f"Произошла ошибка при запуске программы: {e}")
 
 if __name__ == "__main__":
     main()
